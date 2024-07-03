@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Nantes";
+  src: url("/font/Nantes-Light.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.blend-bg {
+  background-color: #1e40af;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 0;
+  font-family: "Nantes", sans-serif;
+}
+
+.dropdown-menu {
+  z-index: 10;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.blend-img {
+  mix-blend-mode: multiply;
+}
