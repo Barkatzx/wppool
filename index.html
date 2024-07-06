@@ -13,13 +13,15 @@
   </head>
   <body class="bg-gray-300">
     <!-- Navbar Section Start Here -->
+    <!-- Fixed Navbar -->
     <nav
-      class="container mx-auto bg-blue-800 p-4 flex justify-between items-center fixed top-0 left-0 right-0 z-10"
+      class="container mx-auto bg-blue-800 p-8 flex justify-between items-center top-0 left-0 right-0 z-10"
+      id="navbar-fixed"
     >
       <div class="text-white text-lg font-bold">
         <img src="/img/logo.png" alt="Wppool" class="h-8" />
       </div>
-      <div class="hidden md:flex space-x-4 items-center">
+      <div class="desktop-nav hidden md:flex space-x-4 items-center">
         <i
           class="fa-solid fa-share-nodes text-white border-white border-2 px-3 py-3 rounded-full"
         ></i>
@@ -31,6 +33,27 @@
         </button>
       </div>
       <button class="text-white md:hidden" id="mobile-menu-button">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- Scrolling Navbar (initially hidden) -->
+    <nav id="navbar-scrolling" class="rounded-lg container mx-auto p-8">
+      <div>
+        <img src="./img/black logo.png" alt="Wppool" class="h-8" />
+      </div>
+      <div class="hidden md:flex space-x-4 items-center">
+        <i
+          class="fa-solid fa-share-nodes border-green-800 border-2 px-3 py-3 rounded-full"
+        ></i>
+        <button class="border-blue-700 border-2 px-2 py-2 rounded-full">
+          Download the 2024 Report
+        </button>
+        <button id="desktop-menu-button-scrolling">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <button id="mobile-menu-button-scrolling" class="md:hidden">
         <i class="fa-solid fa-bars"></i>
       </button>
     </nav>
@@ -48,6 +71,54 @@
             Download the 2024 Report
           </button>
           <button class="text-black px-4 py-4 text-lg" id="close-menu-button">
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <ul class="flex flex-col mt-4">
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">The WPPOOL Index</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">All Companies</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">Potential Future Listings</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">State Of USA</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">Stories and Ideas</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">About WPPOOL</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">WPPOOL Portfolio Companies</a>
+        </li>
+        <li class="text-blue-600 py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">Visit WPPOOL</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Scrolling Dropdown Desktop -->
+    <div
+      class="hidden absolute right-1 top-1 bg-white shadow-lg rounded-lg w-auto p-4 dropdown-menu"
+      id="desktop-dropdown-menu-scrolling"
+    >
+      <div class="flex justify-between items-center">
+        <div class="flex space-x-4 items-center">
+          <i
+            class="fa-solid fa-share-nodes text-white bg-green-600 px-4 py-4 rounded-full"
+          ></i>
+          <button class="text-white bg-blue-700 px-4 py-4 rounded-full">
+            Download the 2024 Report
+          </button>
+          <button
+            class="text-black px-4 py-4 text-lg"
+            id="close-menu-button-scrolling"
+          >
             <i class="fa-solid fa-times"></i>
           </button>
         </div>
@@ -128,9 +199,56 @@
         </li>
       </ul>
     </div>
+    <!-- Scrolling Dropdown Mobile -->
+    <div
+      class="hidden absolute right-1 top-1 left-1 bg-white shadow-lg rounded-lg w-auto p-4 dropdown-menu"
+      id="mobile-dropdown-menu-scrolling"
+    >
+      <div class="flex justify-between items-center">
+        <div class="flex space-x-4 items-center">
+          <i
+            class="fa-solid fa-share-nodes text-white bg-green-600 px-4 py-4 rounded-full"
+          ></i>
+          <button class="text-white bg-blue-700 p-1 rounded-full">
+            Download the 2024 Report
+          </button>
+          <button
+            class="text-black px-4 py-4 text-lg"
+            id="close-menu-button-mobile-scrolling"
+          >
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <ul class="flex flex-col mt-4">
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">The WPPOOL Index</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">All Companies</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">Potential Future Listings</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">State Of USA</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">Stories and Ideas</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">About WPPOOL</a>
+        </li>
+        <li class="py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">WPPOOL Portfolio Companies</a>
+        </li>
+        <li class="text-blue-600 py-3 px-2 hover:bg-blue-200 rounded">
+          <a href="#">Visit WPPOOL</a>
+        </li>
+      </ul>
+    </div>
     <!-- Mobile Dropdown Menu End Here -->
     <!-- Navbar Section End Here -->
-
     <!-- Hero Section Start Here -->
     <div class="container mx-auto blend-bg">
       <div class="absolute-center">
@@ -174,8 +292,9 @@
     <!-- Hero Section End Here -->
 
     <!-- The WPPOOL Index Section Start Here -->
-    <section class="container mx-auto bg-white p-4">
+    <section class="container mx-auto bg-white m-4 p-4">
       <div class="flex gap-4">
+        <!-- Sidebar Section -->
         <div class="bg-gray-300 rounded-lg shadow-lg h-auto w-56 p-2">
           <div
             class="flex justify-between bg-blue-700 items-center text-white rounded-lg p-2"
@@ -214,47 +333,112 @@
             <div class="text-sm"><i class="fa-solid fa-plus"></i></div>
           </div>
         </div>
+
+        <!-- Main Content Section -->
         <div>
+          <!-- Header Section -->
           <div class="flex gap-2 items-center">
-            <img src="/img/Union.png" class="h-8" />
-            <h1 class="text-4xl text-black">The WPPOOL Index</h1>
+            <div><img src="/img/Union.png" class="h-8" /></div>
+            <div>
+              <h1 class="lg:text-4xl text-black sm:text-sm">
+                The WPPOOL Index
+              </h1>
+            </div>
           </div>
-          <div class="flex">
-            <div class="bg-gray-300 m-4 p-2 rounded-lg shadow-lg w-56">
-              <div class="flex items-center justify-between">
-                <div>
-                  <h1 class="text-2xl text-orange-600">+66.2%</h1>
+
+          <!-- Card Grid Section -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- First Div -->
+            <div class="bg-gray-300 m-4 py-2 rounded-lg shadow-lg">
+              <div
+                class="flex flex-col sm:flex-row items-center justify-between gap-2"
+              >
+                <div class="sm:mr-8 mb-2 sm:mb-0">
+                  <h1 class="text-2xl font-bold text-orange-800">+66.2%</h1>
                 </div>
-                <div class="flex items-center gap-2">
-                  <h1>
-                    WPOOL <br />
-                    Index
-                  </h1>
-                  <img src="/img/orange.png" class="h-8" />
+                <div class="flex items-center">
+                  <div class="mr-2">
+                    <h1 class="text-base">WPPOOL Index</h1>
+                  </div>
+                  <div>
+                    <img src="/img/orange.png" />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="flex">
-            <div class="bg-gray-300 m-4 p-2 rounded-lg shadow-lg w-56">
-              <div class="flex items-center justify-between">
-                <div>
-                  <h1 class="text-2xl text-orange-600">+66.2%</h1>
+
+            <!-- Second Div -->
+            <div class="bg-gray-300 m-4 p-2 rounded-lg shadow-lg">
+              <div
+                class="flex flex-col sm:flex-row items-center justify-between gap-2"
+              >
+                <div class="sm:mr-8 mb-2 sm:mb-0">
+                  <h1 class="text-2xl font-bold text-indigo-800">+26.6%</h1>
                 </div>
-                <div class="flex items-center gap-2">
-                  <h1>
-                    WPOOL <br />
-                    Index
-                  </h1>
-                  <img src="/img/orange.png" class="h-8" />
+                <div class="flex items-center">
+                  <div class="mr-2">
+                    <h1 class="text-base">
+                      Google <br />
+                      Index
+                    </h1>
+                  </div>
+                  <div>
+                    <img src="/img/indigo.png" />
+                  </div>
                 </div>
               </div>
             </div>
+
+            <!-- Third Div -->
+            <div class="bg-gray-300 m-4 py-2 rounded-lg shadow-lg">
+              <div
+                class="flex flex-col sm:flex-row items-center justify-between gap-2"
+              >
+                <div class="sm:mr-8 sm:mb-0">
+                  <h1 class="text-2xl font-bold text-green-600">+34.1%</h1>
+                </div>
+                <div class="flex items-center">
+                  <div class="mr-2">
+                    <h1 class="text-base">Microsoft</h1>
+                  </div>
+                  <div>
+                    <img src="./img/green.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fourth Div -->
+            <div class="bg-gray-300 m-4 p-2 rounded-lg shadow-lg">
+              <div
+                class="flex flex-col sm:flex-row items-center justify-between gap-2"
+              >
+                <div class="sm:mr-8 mb-2 sm:mb-0">
+                  <h1 class="text-2xl font-bold text-blue-700">+17%</h1>
+                </div>
+                <div class="flex items-center">
+                  <div class="mr-2">
+                    <h1 class="text-base">
+                      Twitter <br />
+                      Index
+                    </h1>
+                  </div>
+                  <div>
+                    <img src="/img/blue.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Repeat this card for other items if needed -->
           </div>
+          <canvas id="myChart" width="400" height="400"></canvas>
         </div>
+        <!-- Chart Added Here -->
       </div>
     </section>
+
     <!-- The WPPOOL Index Section End Here -->
     <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>

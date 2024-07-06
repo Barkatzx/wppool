@@ -37,3 +37,44 @@
 h1 {
   font-family: "Nantes", sans-serif;
 }
+
+nav {
+  height: 60px;
+  color: black;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Styles for the fixed navbar */
+#navbar-fixed {
+  transform: translateY(0); /* Initially visible */
+}
+
+/* Styles for the scrolling navbar */
+#navbar-scrolling {
+  transform: translateY(-100%); /* Initially hidden */
+}
+
+/* Hide mobile menu button on desktop */
+#mobile-menu-button {
+  display: none;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  #mobile-menu-button {
+    display: block;
+  }
+}
