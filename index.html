@@ -295,47 +295,47 @@
     <section class="container mx-auto bg-white m-4 p-4">
       <div class="flex gap-4">
         <!-- Sidebar Section -->
-        <div class="bg-gray-300 rounded-lg shadow-lg h-auto w-56 p-2">
+        <div class="bg-gray-300 rounded-lg shadow-lg h-auto w-full sm:w-56 p-2">
           <div
             class="flex justify-between bg-blue-700 items-center text-white rounded-lg p-2"
           >
             <h1 class="font-bold">The Index</h1>
-            <div class="text-sm"><i class="fa-solid fa-minus"></i></div>
+            <div class="text-sm"><i class="fas fa-minus"></i></div>
           </div>
           <div
             class="flex justify-between p-2 hover:bg-blue-700 items-center hover:text-white rounded-lg text-gray-500"
           >
             <h1 class="font-bold">The Index One</h1>
-            <div class="text-sm"><i class="fa-solid fa-plus"></i></div>
+            <div class="text-sm"><i class="fas fa-plus"></i></div>
           </div>
           <div
             class="flex justify-between p-2 hover:bg-blue-700 items-center hover:text-white rounded-lg text-gray-500"
           >
             <h1 class="font-bold">The Index Two</h1>
-            <div class="text-sm"><i class="fa-solid fa-plus"></i></div>
+            <div class="text-sm"><i class="fas fa-plus"></i></div>
           </div>
           <div
             class="flex justify-between p-2 hover:bg-blue-700 items-center hover:text-white rounded-lg text-gray-500"
           >
             <h1 class="font-bold">The Index Three</h1>
-            <div class="text-sm"><i class="fa-solid fa-plus"></i></div>
+            <div class="text-sm"><i class="fas fa-plus"></i></div>
           </div>
           <div
             class="flex justify-between p-2 hover:bg-blue-700 items-center hover:text-white rounded-lg text-gray-500"
           >
             <h1 class="font-bold">The Index Four</h1>
-            <div class="text-sm"><i class="fa-solid fa-plus"></i></div>
+            <div class="text-sm"><i class="fas fa-plus"></i></div>
           </div>
           <div
             class="flex justify-between p-2 hover:bg-blue-700 items-center hover:text-white rounded-lg text-gray-500"
           >
             <h1 class="font-bold">The Index Five</h1>
-            <div class="text-sm"><i class="fa-solid fa-plus"></i></div>
+            <div class="text-sm"><i class="fas fa-plus"></i></div>
           </div>
         </div>
 
         <!-- Main Content Section -->
-        <div>
+        <div class="w-full">
           <!-- Header Section -->
           <div class="flex gap-2 items-center">
             <div><img src="/img/Union.png" class="h-8" /></div>
@@ -353,15 +353,15 @@
               <div
                 class="flex flex-col sm:flex-row items-center justify-between gap-2"
               >
-                <div class="sm:mr-8 mb-2 sm:mb-0">
+                <div class="sm:mr-8 mb-2">
                   <h1 class="text-2xl font-bold text-orange-800">+66.2%</h1>
                 </div>
                 <div class="flex items-center">
-                  <div class="mr-2">
+                  <div>
                     <h1 class="text-base">WPPOOL Index</h1>
                   </div>
-                  <div>
-                    <img src="/img/orange.png" />
+                  <div class="mr-2">
+                    <img src="./img/orange.png" />
                   </div>
                 </div>
               </div>
@@ -401,7 +401,7 @@
                   <div class="mr-2">
                     <h1 class="text-base">Microsoft</h1>
                   </div>
-                  <div>
+                  <div class="mr-2">
                     <img src="./img/green.png" />
                   </div>
                 </div>
@@ -429,16 +429,18 @@
                 </div>
               </div>
             </div>
-            <!-- Repeat this card for other items if needed -->
           </div>
-          <canvas id="myChart" width="400" height="400"></canvas>
+
+          <!-- Chart Section -->
+          <div class="w-full">
+            <canvas id="myChart"></canvas>
+          </div>
         </div>
-        <!-- Chart Added Here -->
       </div>
     </section>
-
     <!-- The WPPOOL Index Section End Here -->
     <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/ dist/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>

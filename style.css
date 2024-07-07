@@ -78,3 +78,16 @@ nav {
     display: block;
   }
 }
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* CSS for responsive chart */
+#myChart {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}

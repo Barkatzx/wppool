@@ -68,61 +68,104 @@
       });
 
       // Scale Chart 
-    // Data for the chart
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-    const companies = ['WPPOOL', 'Google', 'Microsoft', 'Twitter'];
-    const data = {
-      labels: months,
-      datasets: [
-        {
-          label: companies[0],
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          borderWidth: 1,
-          data: [10, 20, 30, 40, 50, 60, 70],
-        },
-        {
-          label: companies[1],
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1,
-          data: [15, 25, 35, 45, 55, 65, 75],
-        },
-        {
-          label: companies[2],
-          backgroundColor: 'rgba(255, 206, 86, 0.2)',
-          borderColor: 'rgba(255, 206, 86, 1)',
-          borderWidth: 1,
-          data: [20, 30, 40, 50, 60, 70, 80],
-        },
-        {
-          label: companies[3],
-          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 1,
-          data: [25, 35, 45, 55, 65, 75, 85],
-        }
-      ]
-    };
-
-    // Configuration for the chart
-    const config = {
-      type: 'line',
-      data: data,
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-            ticks: {
-              stepSize: 10
+      window.onload = function () {
+        const months = ['February', 'March', 'April', 'May', 'June', 'July'];
+        const companies = ['WPPOOL', 'Google', 'Microsoft', 'Twitter'];
+      
+        // Generate labels for each day in the given months
+        const daysInMonths = {
+          'February': 28,
+          'March': 31,
+          'April': 30,
+          'May': 31,
+          'June': 30,
+          'July': 31
+        };
+      
+        const generateRandomDataForMonth = (days) => {
+          let data = [];
+          for (let i = 0; i < days; i++) {
+            data.push(Math.floor(Math.random() * 101)); // Random data between 0 and 100
+          }
+          return data;
+        };
+      
+        const wpPoolData = Object.values(daysInMonths).flatMap(days => generateRandomDataForMonth(days));
+        const googleData = Object.values(daysInMonths).flatMap(days => generateRandomDataForMonth(days));
+        const microsoftData = Object.values(daysInMonths).flatMap(days => generateRandomDataForMonth(days));
+        const twitterData = Object.values(daysInMonths).flatMap(days => generateRandomDataForMonth(days));
+      
+        const data = {
+          labels: months,
+          datasets: [
+            {
+              label: companies[0],
+              backgroundColor: 'rgba(255, 165, 0, 0.2)', // Orange with transparency
+              borderColor: 'rgba(255, 165, 0, 1)', // Orange
+              borderWidth: 1,
+              data: wpPoolData, // Random data
+            },
+            {
+              label: companies[1],
+              backgroundColor: 'rgba(75, 0, 130, 0.2)', // Indigo with transparency
+              borderColor: 'rgba(75, 0, 130, 1)', // Indigo
+              borderWidth: 1,
+              data: googleData, // Random data
+            },
+            {
+              label: companies[2],
+              backgroundColor: 'rgba(0, 128, 0, 0.2)', // Green with transparency
+              borderColor: 'rgba(0, 128, 0, 1)', // Green
+              borderWidth: 1,
+              data: microsoftData, // Random data
+            },
+            {
+              label: companies[3],
+              backgroundColor: 'rgba(0, 0, 255, 0.2)', // Blue with transparency
+              borderColor: 'rgba(0, 0, 255, 1)', // Blue
+              borderWidth: 1,
+              data: twitterData, // Random data
+            }
+          ]
+        };
+      
+        const config = {
+          type: 'line',
+          data: data,
+          options: {
+            scales: {
+              x: {
+                type: 'category',
+                labels: months, // Only show month names on the x-axis
+                ticks: {
+                  autoSkip: false
+                }
+              },
+              y: {
+                min: -10,
+                max: 90,
+                ticks: {
+                  callback: function (value) {
+                    return value + '%'; // Add '%' to the tick labels
+                  },
+                  stepSize: 10
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                position: 'bottom' // Position the labels at the bottom
+              }
             }
           }
-        }
-      }
-    };
-
-    // Create the chart
-    var myChart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
+        };
+      
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, config);
+      
+        // Resize chart canvas when window size changes
+        window.addEventListener('resize', () => {
+          myChart.resize();
+        });
+      };
+      
