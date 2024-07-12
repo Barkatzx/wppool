@@ -69,17 +69,17 @@
 
       // Scale Chart 
       window.onload = function () {
-        const months = ['February', 'March', 'April', 'May', 'June', 'July'];
+        const months = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
         const companies = ['WPPOOL', 'Google', 'Microsoft', 'Twitter'];
       
         // Generate labels for each day in the given months
         const daysInMonths = {
-          'February': 28,
-          'March': 31,
-          'April': 30,
+          'Feb': 28,
+          'Mar': 31,
+          'Apr': 30,
           'May': 31,
-          'June': 30,
-          'July': 31
+          'Jun': 30,
+          'Jul': 31
         };
       
         const generateRandomDataForMonth = (days) => {
