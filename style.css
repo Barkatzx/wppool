@@ -91,3 +91,17 @@ canvas {
   height: auto;
   width: 100%;
 }
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-container input {
+  padding-left: 2.5rem;
+}
+.search-container .fa-search {
+  position: absolute;
+  left: 0.75rem;
+  color: #a0aec0;
+}
