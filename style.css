@@ -105,3 +105,9 @@ canvas {
   left: 0.75rem;
   color: #a0aec0;
 }
+
+.slider {
+  background-image: url(./img/bg.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
